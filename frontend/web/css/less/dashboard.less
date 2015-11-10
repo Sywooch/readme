@@ -1,0 +1,34 @@
+/*
+------------------------ Dashboard --------------- */
+#dashboard {
+  background: #DDD url('../../css/img/grain_dark.gif');
+  border-top: 1px dashed #C0C0B0;
+  #dashboard-content {
+    width: @width-site;
+    margin:0 auto;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    .dash-column {
+      width: @width-site / 4 - 36px;
+      margin-left: 20px;
+      padding-left: 20px;
+      border-left: 1px solid #CCB;
+      &:first-child {
+        border:0;
+      }
+      li {
+        color: #887;
+        padding: 5px 0;
+        border-top: 1px dashed #C6C6B6;
+        a {
+          color: #606050;
+          .not-decorated;
+          &:hover {
+            color: #332;
+            .underlined;
+          }
+        }
+      }
+    }
+  }
+}

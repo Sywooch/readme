@@ -1,0 +1,184 @@
+
+@import "less/variables";
+@import "less/layout";
+@import "less/header";
+@import "less/sidebar";
+@import "less/dashboard";
+@import "less/footer";
+@import "less/navigation";
+@import "less/comments";
+@import "less/pagination";
+@import "less/breadcrumbs";
+@import "less/catalog";
+@import "less/productcard";
+@import "less/form";
+
+/* 
+   Typography 
+------------------------------------------------------------------- */
+
+p {
+    line-height: 1.2rem;
+    padding: 0.2em 0 1.2em;
+    font-size: 1.1rem;
+}
+
+h1 {font: normal 2.2em Verdana,serif;}
+h2 {font: normal 2em Verdana,serif;}
+h3 {font: normal 1.8rem Verdana,serif;}
+h4 {font: normal 1.6em Verdana,serif;}
+h5 {font: normal 1.4em Verdana,serif;}
+h6 {font: bold 1.2em Verdana,serif;}
+
+h1,h2,h3,h4,h5,h6 {margin-bottom: 0.1rem;}
+
+blockquote {
+    background: #F6F6F2 url('../css/img/backgrounds.gif') no-repeat 0 -414px;
+    border-bottom: 1px solid #E0E0D4;
+    border-top: 1px solid #E0E0D4;
+    color: #332;
+    display: block;
+    margin: 0.6em 0 1.6em;
+    padding: 0.8em 1em 0.2em 46px;
+}
+
+label {
+    font-weight: normal;
+}
+/* 
+   Tables
+------------------------------------------------------------------- */
+
+table.data_table {
+    border: 1px solid #CCB;
+
+    /*width: 100%;*/
+}
+table.data_table th {
+    background: url('../css/img/grain_dark.gif');
+    border: 1px solid #CCB;
+    color: #555;
+    text-align: left;
+}
+table.data_table tr {border-bottom: 1px solid #DDD;}
+table.data_table td, table th {padding: 5px 8px;}
+table.data_table td {
+    background: url('../css/img/grain_light.gif');
+    border: 1px solid #DDC;
+}
+
+
+/* 
+   Lists
+------------------------------------------------------------------- */
+
+dl {margin-bottom: 2em;}
+dt,dd {padding: 8px 10px;}
+dt {
+    background: url('../css/img/grain_dark.gif');
+    border-bottom: 1px solid #CCB;
+    color: #555;
+    font-weight: bold;
+}
+dd {
+    background: url('../css/img/grain_light.gif');
+    border-bottom: 1px solid #DDC;
+    padding-left: 16px;
+}
+
+
+/* 
+   Links 
+------------------------------------------------------------------- */
+
+a {color: #543;}
+a:hover {
+    color: @orange;
+    .underlined;
+}
+
+/* 
+   Images 
+------------------------------------------------------------------- */
+
+img.bordered {
+    background-color: #FFF;
+    border: 1px solid #DDD;
+    padding: 3px;
+}
+
+img.left {margin: 0 15px 12px 0;}
+img.right {margin: 0 0 15px 12px;}
+
+/* 
+   Misc 
+------------------------------------------------------------------- */
+
+/* Separators */
+.content_separator, .archive_separator {
+    background: #D6D6C6;
+    clear: both;
+    color: #FFE;
+    display: block;
+    font-size: 0;
+    height: 1px;
+    line-height: 0;
+    margin: 12px 0 24px;
+}
+.archive_separator {margin: 0 0 12px;}
+.empty_separator {height: 30px;}
+/* 
+   Posts 
+------------------------------------------------------------------- */
+
+.post {margin-bottom: 24px;}
+
+.post_title a,.post_date a {text-decoration: none;}
+.post_date a:hover,.post_meta a:hover {text-decoration: underline;}
+
+.post_date {
+    color: #777;
+    margin-bottom: 14px;
+}
+.post_date a {color: #444;}
+
+.post_meta {
+    background: url('../css/img/grain_light.gif');
+    border: 1px solid #E5E5D5;
+    color: #776;
+    font-size: 0.9rem;
+    padding: 8px 10px;
+}
+.post_meta a {color: #665;}
+.post_meta a:hover {color: #001;}
+
+/* Archives */
+.archive_pagination {margin-bottom: 1.6em;}
+.archive_post {margin-bottom: 1em;}
+.archive_post_date {
+    background: url('../css/img/grain_light.gif');
+    border-bottom: 1px solid #C5C5B5;
+    border-right: 1px solid #CFCFBF;
+    float: left;
+    margin-right: 12px;
+    padding: 3px 0 5px;
+    text-align: center;
+    width: 44px;
+}
+.archive_post_day {font: normal 1.8em Georgia,serif;}
+
+
+/* 
+   Thumbnails
+------------------------------------------------------------------- */
+
+.thumbnails {margin: 0 -0 2em -8px;}
+.thumbnails a.thumb {
+    background: url('../css/img/grain_dark.gif');
+    display: block;
+    float: left;
+    margin: 0 0 8px 8px;
+    padding: 3px;
+}
+.thumbnails a.thumb:hover {background: #C6C6BA;}
+.thumbnails .thumb img {display: block;}

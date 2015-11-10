@@ -1,0 +1,30 @@
+/*
+------------------ Navigation ---------------- */
+#navigation ul, #navigation li {
+  .inline;
+}
+
+#navigation, #navigation a {
+  background: #958573 url('../../css/img/backgrounds.gif') repeat-x 0 -222px;
+}
+
+#navigation {
+  a {
+    border-right: 1px solid #AFA69C;
+    color: #654;
+    .left;
+    font: bolder 1rem Verdana, serif; /*Georgia,sans-serif;*/
+    margin-right: 1px;
+    padding: 10px 12px;
+    .alignCenter;
+    .not-decorated;
+  }
+  li:first-child a {
+    border-left: 1px solid #AFA69C;
+  }
+}
+
+#navigation a:hover, #navigation li.current_page_item a {
+  background-position: 0 -294px;
+  color: #543;
+}

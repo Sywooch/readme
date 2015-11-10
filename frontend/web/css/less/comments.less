@@ -1,0 +1,42 @@
+/*
+   Comments
+------------------------------------------------------------------- */
+
+#comments {
+  .comments-list {
+    margin: 1rem 0 2rem;
+    &:first-child {
+      border-top: 0px;
+    }
+    .comment {
+      border-top: 1px solid #D6D6C6;
+      padding-top: 10px;
+      .gravatar {
+        width: 80px;
+        img {
+          background: @white;
+          border: 1px solid #DDD;
+          padding: 2px;
+        }
+      }
+      .author {padding-top: 3px;}
+      .date {
+        font-size: 0.9rem;
+        padding-top: 4px;
+        a {
+          color: #665;
+          .not-decorated;
+          &:hover {
+            color: #001;
+            .underlined;
+          }
+        }
+      }
+      .body {padding-top: 4px;}
+    }
+  }
+
+  #reply {
+    margin-top: 10px;
+  }
+}

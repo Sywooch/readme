@@ -1,0 +1,90 @@
+/*
+   Forms
+------------------------------------------------------------------- */
+
+.wrap-box {
+  border: 1px solid #CCB;
+  margin-bottom: 30px;
+  .success{margin: 0!important;}
+  a{
+    color: @orange;
+    text-decoration: underline;
+    //.bold;
+  }
+}
+.wrap-box-title, .wrap-box-row-submit{
+  background: url('../../css/img/grain_dark.gif')!important;
+  padding: 10px 20px;
+}
+.wrap-box-title{
+  border-bottom: 1px solid #CCB;
+  font-size: 1.8rem;
+}
+.wrap-box-row{
+  background: url('../../css/img/grain_light.gif');
+  border-top: 1px solid #E1E1D5;
+  padding: 10px 0;
+  font-size: 1rem;
+  &:first-child{border-top:0!important;}
+  .wrap-box-property {
+    text-align: right;
+    width: 110px;
+    float: left;
+  }
+  .wrap-box-value {
+    padding-left: 24px;
+    float: left;
+  }
+  .wrap-box-row-inner{
+    padding: 0 20px;
+  }
+  .wrap-box-row-center{
+    padding: 20px auto;
+    text-align: center;
+  }
+
+  .checkbox{
+    label{
+      margin: 0;
+    }
+    margin: 0;
+    padding: 10px 20px;
+  }
+}
+.wrap-box-row-submit {
+  border-top: 1px solid #CCB;
+  .wrap-box-value {font-size: 1rem; padding-left: 132px;}
+  input:hover {.buttonOrange;text-decoration: underline;}
+}
+.wrap-box-row-required {font-weight: bold;}
+///------------------
+
+.required label {font-weight: bold;}
+.has-error input{border: 2px solid #a94442;}
+.has-success input{border: 2px solid #3c763d;}
+.form-group {
+  margin-bottom: 0!important;
+  border-top: 1px solid #E1E1D5;
+}
+.label-wrapper{
+  padding-right: 20px;
+  width:150px;
+  text-align: right;
+  .label-test{
+    width: 100%;
+    line-height: 2.3rem;
+  }
+}
+.input-wrapper{
+  padding-left: 20px;
+}
+.error-wrapper{
+  p{
+    margin: 0;
+    padding: 0 30px;
+    font-size: 0.9rem;
+    .bold;
+    line-height: 1.5rem;
+  }
+}
+

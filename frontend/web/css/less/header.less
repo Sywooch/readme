@@ -1,0 +1,48 @@
+/*
+---------------------- Header -----------------------*/
+#header {
+  background: #35322B url('../../css/img/backgrounds.gif') repeat-x 0 0;
+  padding-top: 8px;
+  height: 150px;
+  #title {
+    font-size: 3rem;
+    padding: 2rem 0 1.5rem;
+    a {
+      color: @white;
+      .not-decorated;
+      &:hover {
+        color: @yellow;
+      }
+    }
+    span {
+      color: @grey;
+    }
+  }
+  #sub-title{
+    font-size: 1.2rem;
+    color: @grey-half-dark;
+    .italic;
+    font-family: @font-georgia;
+  }
+  #top-links-pane {
+    height: 27px;
+    width: 100%;
+    #top-links-inner {
+      .right;
+      font-size: 1rem;
+      height: 27px;
+      width:230px;
+      color: @brown;
+      background: @dark-brown url('../../css/img/toplinks.gif') no-repeat left top;
+      .alignCenter;
+      padding-top: 3px;
+      a {
+        color: @grey-dark;
+        &:hover {
+          color: @grey-light;
+        }
+      }
+    }
+
+  }
+}

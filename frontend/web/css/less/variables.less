@@ -1,0 +1,94 @@
+/* ------------- Colors --------------- */
+@dark-brown: #353530;
+@light-brown: #5A5A50;
+@brown: #554;
+@orange: #C40;
+@orange-dark: #a83801;
+@yellow: #FFB;
+@white: #FFF;
+
+@grey-dark: #887;
+@grey-half-dark: #998;
+@grey: #CCB;
+@grey-light: #DDC;
+
+@grain-dark: #dadacb;
+@grain-light: #f7f8f2;
+
+/* ---------- Fonts --------------------*/
+@main-font-size: 12px;
+@font-verdana: Verdana, serif;
+@font-georgia: Georgia, sans-serif;
+
+@width-site: 1200px;
+@width-sidebar: 210px;
+@width-between-columns: 20px;
+@width-content: @width-site - (@width-sidebar * 2) - (@width-between-columns * 2);
+
+/* -----------Common classes ---------*/
+.underlined {text-decoration: underline!important;}
+.not-decorated {text-decoration: none!important;}
+.italic {font-style: italic!important;}
+.bold {font-weight: bold!important;}
+.normal {font-weight: normal!important;}
+.alignCenter {text-align: center!important;}
+.alignLeft {text-align: left!important;}
+.alignRight {text-align: right!important;}
+.inline {display: inline!important;}
+.inline-block {display: inline-block!important;}
+.yellow {color: @yellow!important; }
+/*---------- Common -------------------*/
+.buttonOrange {
+  background-color: @orange;
+  border: 2px solid @orange-dark;
+  padding: 5px 10px;
+  color: @white;
+}
+.buttonGreyLight {
+  background-color: @grain-light;
+  border: 2px solid @grain-dark;
+  padding: 5px 10px;
+  color: @light-brown;
+}
+a:hover {color: @orange;}
+
+.app-input {
+  background-color: #f9f9f8;
+  border:2px solid #e2e2d9;
+  resize: none;
+  padding: 5px;
+  &:focus, &:active, &:hover {
+    background-color: #f9f9f8!important;
+  }
+}
+input, textarea {
+  .app-input;
+}
+select {
+  /*for WebKit*/
+  -webkit-appearance: none;
+  /* for FF */
+  -moz-appearance: none;
+  text-indent: 0.01px;
+  text-overflow: '';
+  /* for IE */
+  -ms-appearance: none;
+  appearance: none!important;
+
+  background-image: url('../../css/img/arrow_up_down.png');
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-color: #f9f9f8;
+  border:2px solid #e2e2d9;
+  padding-right:15px;
+  select::-ms-expand {
+    display: none;
+  }
+  &:focus, &:active, &:hover {
+    background-color: #f9f9f8!important;
+  }
+}
+.cols {
+  display: inline-block;
+  vertical-align: top;
+}

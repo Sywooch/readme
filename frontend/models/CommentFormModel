@@ -1,0 +1,22 @@
+<?php
+
+namespace app\models;
+
+use Yii;
+use yii\base\Model;
+
+class CommentFormModel extends Model
+{
+    public $userid;
+    public $text;
+
+    public function rules()
+    {
+        return [
+            [['userid', 'text'], 'required'],
+            [['text'], 'string', 'max' => 1000],
+        ];
+    }
+}
+
+?>

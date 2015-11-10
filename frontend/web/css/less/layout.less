@@ -1,0 +1,106 @@
+/*
+   Reset
+------------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font,
+img, ins, kbd, q, s, samp, small, strike, strong, sub, tt, var, b, u, i,
+center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td {
+  margin: 0; padding: 0; border: 0; outline: 0;
+  vertical-align: baseline; background: transparent; }
+ ol, ul { list-style: none; } blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+:focus { outline: 0; } ins { text-decoration: none; } del { text-decoration: line-through; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+/*
+   General
+------------------------------------------------------------------- */
+html {
+  font-size: @main-font-size;
+  height: 100%;
+}
+
+body {
+  font-size: 1rem;
+  background: @dark-brown;
+  color: @light-brown;
+  font-family: @font-verdana;
+  height: 100%;
+  padding-bottom: 1px; /* force scrollbars */
+  line-height: 1.5rem;
+  .normal;
+}
+
+.center_wrapper {
+  margin: 0 auto;
+  width: @width-site;
+}
+
+#main-block {
+  #main_wrapper_outer {
+    background: url('../../css/img/grain.gif');
+    #main_wrapper_inner {
+      background: url('../../css/img/main_wrapper_inner.gif') repeat-x left top;
+      padding: 24px 0;
+      line-height: 1.4rem;
+    }
+  }
+}
+
+
+
+#sidebar-left {
+  width:@width-sidebar;
+  padding-right: @width-between-columns;
+
+}
+#sidebar-right {
+  width: @width-sidebar;
+  padding-left: @width-between-columns;
+
+}
+#main-content {
+  width: @width-content;
+
+}
+
+
+
+/*
+      Messages
+--------------------------------------------------------------*/
+.error, .notice, .success, .notification {
+  border: 1px solid #DDD;
+  margin: 20px 0;
+  padding: 10px 20px;
+}
+
+.error {background: #FBE3E4; color: #8A1F11; border-color: #FBC2C4;}
+.error a {color: #8A1F11;}
+
+.notice {background: #FFF6BF; color: #514721; border-color: #FFD324;}
+.notice a {color: @orange!important; .underlined;
+&:hover {.not-decorated;}}
+
+.notification {background: @grain-light; color: @light-brown; border-color: @grain-dark;}
+.notification a {color: @orange!important; .underlined;
+  &:hover {.not-decorated;}}
+
+.success {background: #E6EFC2; color: #264409; border-color: #C6D880;}
+.success a {color: #264409;}
+
+/*
+   Floats
+------------------------------------------------------------------- */
+
+.left {float: left!important;}
+.right {float: right!important;}
+
+.clear,.clearer {clear: both;}
+.clearer {
+  display: block;
+  font-size: 0;
+  line-height: 0;
+}

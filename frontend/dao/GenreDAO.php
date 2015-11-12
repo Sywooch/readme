@@ -8,13 +8,10 @@ use Yii;
 class GenreDAO
 {
 
-    public function findFilterOptionsGenres()
+    public function findFilterOptionsGenres($categoryId)
     {
-        return (new Query())
-        ->select('name AS text, genre_id AS value')
-        ->from('tbl_genres')
-        ->distinct()
-        ->all();
+        $sql = "SELECT `genre_id`, `name` FROM `tbl_genres` WHERE `category_id` = :categoryId ORDER BY `name` ASC ";
+        return Yii::$app->db->createCommand($sql)->bindValue(':categoryId', $categoryId)->queryAll();
     }
 
     public function findAllGenresOfBookById($id)

@@ -13,9 +13,22 @@ class GenreServices {
         return new GenreDAO();
     }
 
+    protected function categoryServices()
+    {
+        return new CategoryServices();
+    }
+
     public function getFilterOptionsGenres()
     {
-        if($options = self::dao()->findFilterOptionsGenres()) {
+        $options = array();
+        if($categories = self::categoryServices()->getAllCategories()) {
+            foreach($categories as $category){
+                if($genres = self::dao()->findFilterOptionsGenres($category->categoryID)) {
+                    $options[] = ['catId' => $category->categoryID,
+                        'catName' => $category->categoryName,
+                        'catList' => $genres];
+                }
+            }
             return $options;
         } else {
             return array();

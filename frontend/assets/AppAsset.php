@@ -8,8 +8,7 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/readme.less',
-        'css/sidebarmenu.css',
+        'css/readme.less'
     ];
     public $js = [
     ];

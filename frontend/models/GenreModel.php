@@ -9,6 +9,8 @@ class GenreModel extends Model
 
     public $id;
     public $name;
+    public $categoryID;
+    public $categoryName;
 
 }
 

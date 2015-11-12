@@ -89,8 +89,8 @@ class AppController extends Controller
 
     public function actionGenres()
     {
-        $genres = self::genreServices()->getFilterOptionsGenres();
-        return $this->render('genres', ['genres' => $genres]);
+        $genreOptions = self::genreServices()->getFilterOptionsGenres();
+        return $this->render('genres', ['genreOptions' => $genreOptions]);
     }
 
     public function actionLogin()

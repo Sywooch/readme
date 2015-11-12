@@ -99,15 +99,15 @@ use app\helpers\MyBreadcrumbs;
         <div class="box">
 
             <div class="title">Категорії</div>
-            <?php if (count($genres) > 1) { ?>
+            <?php /*if (count($genres) > 1) { */?><!--
                 <div class="content">
                     <ul>
-                        <?php foreach ($genres as $genre) { ?>
-                            <li><a href="#"><?php echo $genre['text']; ?></a></li>
-                        <?php } ?>
+                        <?php /*foreach ($genres as $genre) { */?>
+                            <li><a href="#"><?php /*echo $genre['text']; */?></a></li>
+                        <?php /*} */?>
                     </ul>
                 </div>
-            <?php } ?>
+            --><?php /*} */?>
         </div>
 
         <div class="box">

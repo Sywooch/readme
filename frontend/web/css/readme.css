@@ -239,11 +239,11 @@ body {
   line-height: 1.4rem;
 }
 #sidebar-left {
-  width: 210px;
+  width: 240px;
   padding-right: 20px;
 }
 #sidebar-right {
-  width: 210px;
+  width: 180px;
   padding-left: 20px;
 }
 #main-content {
@@ -412,6 +412,44 @@ body {
   padding: 15px;
   overflow-y: auto;
   height: 454px;
+}
+.sidebar #accordion {
+  width: 100%;
+}
+.sidebar #accordion li {
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #665;
+  font-size: 0.9rem;
+  padding: 8px 10px;
+  background-image: -ms-linear-gradient(top, #e8e6d7 0%, #d4d2c4 100%);
+  background-image: -moz-linear-gradient(top, #e8e6d7 0%, #d4d2c4 100%);
+  background-image: -o-linear-gradient(top, #e8e6d7 0%, #d4d2c4 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e8e6d7), color-stop(100, #d4d2c4));
+  background-image: -webkit-linear-gradient(top, #e8e6d7 0%, #d4d2c4 100%);
+  background-image: linear-gradient(to bottom, #e8e6d7 0%, #d4d2c4 100%);
+  box-shadow: 0px 0.5px 1px #A19989;
+}
+.sidebar #accordion li .active {
+  /*color:#C40;*/
+
+}
+.sidebar #accordion li .active li {
+  text-indent: 0;
+}
+.sidebar #accordion li ul {
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+.sidebar #accordion li li {
+  font-weight: normal;
+  font-size: 1rem;
+  background: none;
+  border-top: 1px solid #DDC;
+}
+.sidebar #accordion li lifirst-child {
+  border: 0;
 }
 /*
    Box

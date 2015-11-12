@@ -3,7 +3,6 @@
 $this->registerJsFile('@web/js/sidebarmenu.js', ['position' => $this::POS_BEGIN], 'sidebarmenu');
 $this->registerJsFile('@web/js/filterpopup.js', ['position' => $this::POS_BEGIN], 'filterpopup');
 
-use yii\helpers\Html;
 use app\helpers\CatalogLinkPager;
 use app\helpers\MyBreadcrumbs;
 
@@ -23,41 +22,23 @@ $dyeq = isset($_GET['dyeq']) ? $_GET['dyeq'] : 'e';
 <div id="sidebar-left" class="cols sidebar">
     <div id="sidebar-left-content">
         <div class="box">
-            <div class="title">Категорії</div>
-            <div class="content">
-                <div id="celebs">
-                    <ul id="accordion">
-                        <li class="active">
-                            Художня література
-                            <ul>
-                                <li><a href="#">Computadors</a></li>
-                                <li><a href="#">Johny Stardust</a></li>
-                                <li><a href="#">Beau Dandy</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            Навчальна література
-                            <ul>
-                                <li><a href="#">Sinusoidal Tendancies</a></li>
-                                <li><a href="#">Steve Extreme</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            Дитяча література
-                            <ul>
-                                <li><a href="#">Duran Duran Duran</a></li>
-                                <li><a href="#">Mike's Mechanic</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            Бізнес і економіка
-                            <ul>
-                                <li><a href="#">Lardy Dah</a></li>
-                                <li><a href="#">Rove Live</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
+            <div id="celebs">
+                <ul id="accordion">
+                    <?php if (!empty($genreOptions)) { ?>
+                        <?php foreach ($genreOptions as $genreOption) { ?>
+                            <li class="active"><?php echo $genreOption['catName']; ?>
+                                <ul>
+                                    <?php if (!empty($genreOption['catList'])) { ?>
+                                        <?php foreach ($genreOption['catList'] as $genreItem) { ?>
+                                            <li><a href="<?php echo Yii::$app->homeUrl . 'books?g[]=' . $genreItem['genre_id']; ?>">
+                                                    <?php echo $genreItem['name']; ?></a></li>
+                                        <?php } ?>
+                                    <?php } ?>
+                                </ul>
+                            </li>
+                        <?php } ?>
+                    <?php } ?>
+                </ul>
             </div>
         </div>
 
@@ -117,6 +98,9 @@ $dyeq = isset($_GET['dyeq']) ? $_GET['dyeq'] : 'e';
 
 <div id="main-content" class="cols">
     <div id="main_content">
+        <?php /*echo '<pre>'; */ ?><!--
+        <?php /*print_r($genreOptions); */ ?>
+        --><?php /*echo '</pre>'; */?>
         <div>
             <?= MyBreadcrumbs::widget([
                 'homeLink' => [
@@ -216,26 +200,27 @@ $dyeq = isset($_GET['dyeq']) ? $_GET['dyeq'] : 'e';
                         <?php } ?>
 
 
-                            <div class="filterPopupContainer" >
-                                <div class="filterButtonBox">
-                                    <div class="filterButton buttonGreyLight" >[ інші країни ]</div>
+                        <div class="filterPopupContainer">
+                            <div class="filterButtonBox">
+                                <div class="filterButton buttonGreyLight">[ інші країни ]</div>
+                            </div>
+                            <div class="popup">
+                                <div class="title">
+                                    <div class="closeIcon"></div>
+                                    всі країни
                                 </div>
-                                <div class="popup" >
-                                    <div class="title" >
-                                        <div class="closeIcon" ></div>
-                                        всі країни
-                                    </div>
-                                    <div class="scroller" >
-                                    <?php for ($i = 10; $i < count($countryOptions); $i++) {  ?>
+                                <div class="scroller">
+                                    <?php for ($i = 10; $i < count($countryOptions); $i++) { ?>
                                         <div>
-                                            <input type="checkbox" name="c[]" value="<?php echo $countryOptions[$i]->id; ?>"
+                                            <input type="checkbox" name="c[]"
+                                                   value="<?php echo $countryOptions[$i]->id; ?>"
                                                 <?php echo in_array($countryOptions[$i]->id, $c) ? 'checked' : ''; ?>
                                                    onchange="this.form.submit()"/>&nbsp;<?php echo $countryOptions[$i]->name; ?>
                                         </div>
                                     <?php } ?>
-                                    </div>
                                 </div>
                             </div>
+                        </div>
 
                     </div>
                 <?php } ?>

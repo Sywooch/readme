@@ -46,6 +46,43 @@
       }
     }
   }
+  #accordion {
+    width:100%;
+    li{
+      cursor: pointer;
+      font-weight:bold;
+      margin-bottom:5px;
+      color: #665;
+      font-size: 0.9rem;
+      padding: 8px 10px;
+      background-image: -ms-linear-gradient(top, #E8E6D7 0%, #D4D2C4 100%);
+      background-image: -moz-linear-gradient(top, #E8E6D7 0%, #D4D2C4 100%);
+      background-image: -o-linear-gradient(top, #E8E6D7 0%, #D4D2C4 100%);
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #E8E6D7), color-stop(100, #D4D2C4));
+      background-image: -webkit-linear-gradient(top, #E8E6D7 0%, #D4D2C4 100%);
+      background-image: linear-gradient(to bottom, #E8E6D7 0%, #D4D2C4 100%);
+      box-shadow:0px 0.5px 1px #A19989;
+      .active{
+        /*color:#C40;*/
+        li{
+          text-indent:0;
+        }
+      }
+      ul{
+        padding:0;
+        margin:10px 0 0 0;
+      }
+      li{
+        font-weight: normal;
+        font-size: 1rem;
+        background:none;
+        border-top: 1px solid #DDC;
+        &first-child {
+          border: 0;
+        }
+      }
+    }
+  }
 }
 
 /*

@@ -28,10 +28,12 @@ class AuthorsController extends Controller
 
         $pages = self::paginate($per, $c, $byear, $byeq, $dyear, $dyeq);
         $countryOptions = self::countryServices()->getFilterOptionsCountries($c);
+        $genreOptions = self::genreServices()->getFilterOptionsGenres();
 
         $authorModels = self::services()->getAllAuthors($pages, $sort, $ord, $c, $byear, $byeq, $dyear, $dyeq);
         return $this->render('list', ['authors' => $authorModels,
-            'pages' => $pages, 'countryOptions' => $countryOptions]);
+            'pages' => $pages, 'countryOptions' => $countryOptions,
+            'genreOptions' => $genreOptions]);
     }
 
     public function actionSingle($id)

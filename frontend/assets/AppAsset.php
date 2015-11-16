@@ -11,10 +11,12 @@ class AppAsset extends AssetBundle
         'css/readme.less'
     ];
     public $js = [
+        'js/sidebarmenu.js',
+        'js/filterpopup.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
     ];
-    public $jsOptions = ['position' => \yii\web\View::POS_HEAD];
+    public $jsOptions = ['position' => \yii\web\View::POS_BEGIN];
 }

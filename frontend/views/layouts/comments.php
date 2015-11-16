@@ -72,7 +72,7 @@ use app\helpers\CatalogLinkPager;
                 <div class="wrap-box-row">
 
                     <div class="wrap-box-property wrap-box-row-required">Коментар</div>
-                    <div class="wrap-box-value"><textarea rows="10" cols="80" name="comment"></textarea></div>
+                    <div class="wrap-box-value"><textarea rows="10" cols="60" name="comment"></textarea></div>
 
                     <div class="clearer">&nbsp;</div>
 

@@ -1,7 +1,7 @@
 <?php
 //$this->registerJs('alert("Hello world!")', $this::POS_LOAD, 'main-index');
-$this->registerJsFile('@web/js/sidebarmenu.js', ['position' => $this::POS_BEGIN], 'sidebarmenu');
-$this->registerJsFile('@web/js/filterpopup.js', ['position' => $this::POS_BEGIN], 'filterpopup');
+//$this->registerJsFile('@web/js/sidebarmenu.js', ['position' => $this::POS_BEGIN], 'sidebarmenu');
+//$this->registerJsFile('@web/js/filterpopup.js', ['position' => $this::POS_BEGIN], 'filterpopup');
 
 use app\helpers\CatalogLinkPager;
 use app\helpers\MyBreadcrumbs;
@@ -21,77 +21,8 @@ $dyeq = isset($_GET['dyeq']) ? $_GET['dyeq'] : 'e';
 ?>
 <div id="sidebar-left" class="cols sidebar">
     <div id="sidebar-left-content">
-        <div class="box">
-            <div id="celebs">
-                <ul id="accordion">
-                    <?php if (!empty($genreOptions)) { ?>
-                        <?php foreach ($genreOptions as $genreOption) { ?>
-                            <li class="active"><?php echo $genreOption['catName']; ?>
-                                <ul>
-                                    <?php if (!empty($genreOption['catList'])) { ?>
-                                        <?php foreach ($genreOption['catList'] as $genreItem) { ?>
-                                            <li><a href="<?php echo Yii::$app->homeUrl . 'books?g[]=' . $genreItem['genre_id']; ?>">
-                                                    <?php echo $genreItem['name']; ?></a></li>
-                                        <?php } ?>
-                                    <?php } ?>
-                                </ul>
-                            </li>
-                        <?php } ?>
-                    <?php } ?>
-                </ul>
-            </div>
-        </div>
 
-        <div class="box">
-
-            <div class="title">Resources</div>
-
-            <div class="content">
-                <ul>
-                    <li><a href="http://templates.arcsin.se/">Arcsin Web Templates</a></li>
-                    <li><a href="http://www.google.com/" rel="nofollow">Google</a> - Web Search</li>
-                    <li><a href="http://www.w3schools.com/" rel="nofollow">W3Schools</a> - Online Web Tutorials</li>
-                    <li><a href="http://www.wordpress.org/" rel="nofollow">WordPress</a> - Blog Platform</li>
-                    <li><a href="http://cakephp.org/" rel="nofollow">CakePHP</a> - PHP Framework</li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="box">
-
-            <div class="title">Gallery</div>
-
-            <div class="content">
-
-                <div class="thumbnails">
-
-                    <a href="#" class="thumb"><img
-                            src="<?php echo Yii::$app->request->baseUrl; ?>/css/img/sample-thumbnail.jpg" width="75"
-                            height="75" alt=""/></a>
-                    <a href="#" class="thumb"><img
-                            src="<?php echo Yii::$app->request->baseUrl; ?>/css/img/sample-thumbnail.jpg" width="75"
-                            height="75" alt=""/></a>
-                    <a href="#" class="thumb"><img
-                            src="<?php echo Yii::$app->request->baseUrl; ?>/css/img/sample-thumbnail.jpg" width="75"
-                            height="75" alt=""/></a>
-                    <a href="#" class="thumb"><img
-                            src="<?php echo Yii::$app->request->baseUrl; ?>/css/img/sample-thumbnail.jpg" width="75"
-                            height="75" alt=""/></a>
-                    <a href="#" class="thumb"><img
-                            src="<?php echo Yii::$app->request->baseUrl; ?>/css/img/sample-thumbnail.jpg" width="75"
-                            height="75" alt=""/></a>
-                    <a href="#" class="thumb"><img
-                            src="<?php echo Yii::$app->request->baseUrl; ?>/css/img/sample-thumbnail.jpg" width="75"
-                            height="75" alt=""/></a>
-
-                    <div class="clearer">&nbsp;</div>
-
-                </div>
-
-            </div>
-
-        </div>
+        <?php include_once("../views/layouts/menu.php"); ?>
 
     </div>
 </div>

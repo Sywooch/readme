@@ -14,11 +14,21 @@ return [
     'components' => [
         'urlManager' => [
             'showScriptName' => false,
+            'enableStrictParsing' => true,
             'enablePrettyUrl' => true,
             'rules' => array(
                 '' => 'app/index',
                 '/' => 'app/index',
-                '<action:(about|contact|publishhouses|genres|login|logout|signup|request-password-reset)>' => 'app/<action>',
+                'login' => 'app/login',
+                'logout' => 'app/logout',
+                'signup' => 'app/signup',
+                'request-password-reset' => 'app/request-password-reset',
+                'reset-password' => 'app/reset-password',
+                'about' => 'app/about',
+                'contact' => 'app/contact',
+                'publishhouses' => 'app/publishhouses',
+                'genres' => 'app/genres',
+                'captcha' => 'app/captcha',
                 '<controller:\w+>' => '<controller>/list',
                 '<controller:\w+>/<id:\d+>' => '<controller>/single',
             ),

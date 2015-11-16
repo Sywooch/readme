@@ -34,13 +34,13 @@ class BooksController extends Controller
         $countryOptions = self::countryServices()->getFilterOptionsCountries($c);
         $langOptions = self::languageServices()->getFilterOptionsLanguages($lang);
         $langOrigOptions = self::languageServices()->getFilterOptionsLanguagesOrig($langor);
-        $genres = self::genreServices()->getFilterOptionsGenres();
+        $genreOptions = self::genreServices()->getFilterOptionsGenres();
 
         $books = self::services()->getAllBooks($pages, $sort, $ord, $a, $c, $ph, $g,
             $lang, $langor, $year, $yeq, $ser, $trans);
         return $this->render('list', ['books' => $books, 'pages' => $pages,
             'countryOptions' => $countryOptions, 'langOptions' => $langOptions,
-            'langOrigOptions' => $langOrigOptions, 'genres' => $genres]);
+            'langOrigOptions' => $langOrigOptions, 'genreOptions' => $genreOptions]);
     }
 
     public function actionSingle($id)
@@ -48,9 +48,9 @@ class BooksController extends Controller
         $book = self::services()->getBookByID($id);
         $pages = self::paginateComments($id);
         $comments = self::commentServices()->findCommentsForBook($pages, $id);
-        $genres = self::genreServices()->getFilterOptionsGenres();
-        return $this->render('single', ['book' => $book, 'pages' => $pages, 'genres' => $genres,
-            'comments' => $comments]);
+        $genreOptions = self::genreServices()->getFilterOptionsGenres();
+        return $this->render('single', ['book' => $book, 'pages' => $pages,
+            'genreOptions' => $genreOptions, 'comments' => $comments]);
     }
 
     protected function services()

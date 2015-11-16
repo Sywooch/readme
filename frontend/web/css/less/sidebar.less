@@ -4,37 +4,37 @@
 .sidebar {
   min-height: 0.01%;
 
-  .filterPopupContainer{
+  .filterPopupContainer {
     position: relative;
     margin-top: 15px;
     .filterButtonBox {
       text-align: center;
       .filterButton {
         width: 150px;
-        margin:0 auto;
+        margin: 0 auto;
       }
     }
-    .popup{
-      width:250px;
-      height:500px;
+    .popup {
+      width: 250px;
+      height: 500px;
       background-color: @grain-light;
       border: #e2e2d9 solid 4px;
       font-size: 1rem;
-      display:none;
-      position:absolute;
+      display: none;
+      position: absolute;
       overflow: hidden;
       text-align: left;
       .title {
         padding: 5px 10px;
-        height:26px;
+        height: 26px;
         background: url('../../css/img/grain_dark.gif');
         color: #665;
         font-size: 1.1rem;
         .bold;
         .alignCenter;
-        .closeIcon{
+        .closeIcon {
           height: 16px;
-          width:16px;
+          width: 16px;
           float: right;
           background: url('../../css/img/close.png') no-repeat;
         }
@@ -42,43 +42,71 @@
       .scroller {
         padding: 15px;
         overflow-y: auto;
-        height:454px;
+        height: 454px;
       }
     }
   }
   #accordion {
-    width:100%;
-    li{
-      cursor: pointer;
-      font-weight:bold;
-      margin-bottom:5px;
-      color: #665;
-      font-size: 0.9rem;
-      padding: 8px 10px;
-      background-image: -ms-linear-gradient(top, #E8E6D7 0%, #D4D2C4 100%);
-      background-image: -moz-linear-gradient(top, #E8E6D7 0%, #D4D2C4 100%);
-      background-image: -o-linear-gradient(top, #E8E6D7 0%, #D4D2C4 100%);
-      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #E8E6D7), color-stop(100, #D4D2C4));
-      background-image: -webkit-linear-gradient(top, #E8E6D7 0%, #D4D2C4 100%);
-      background-image: linear-gradient(to bottom, #E8E6D7 0%, #D4D2C4 100%);
-      box-shadow:0px 0.5px 1px #A19989;
-      .active{
+    width: 100%;
+    li {
+      border-top: 0;
+      padding: 0;
+      .active {
         /*color:#C40;*/
-        li{
-          text-indent:0;
+        li {
+          text-indent: 0;
         }
       }
-      ul{
-        padding:0;
-        margin:10px 0 0 0;
+      .item-title {
+        cursor: pointer;
+        font-weight: bold;
+        //margin-bottom: 5px;
+        color: #665;
+        font-size: 0.9rem;
+        padding: 8px 10px;
+        @first-color: #ecebe1;
+        @second-color: #d8d7d0;
+        background-image: -ms-linear-gradient(top, @first-color 0%, @second-color 100%);
+        background-image: -moz-linear-gradient(top, @first-color 0%, @second-color 100%);
+        background-image: -o-linear-gradient(top, @first-color 0%, @second-color 100%);
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, @first-color), color-stop(100, @second-color));
+        background-image: -webkit-linear-gradient(top, @first-color 0%, @second-color 100%);
+        background-image: linear-gradient(to bottom, @first-color 0%, @second-color 100%);
+        box-shadow: 0px 0px 1px #A19989;
+        &:hover {
+          @first-color: #f7f7f5;
+          @second-color: #e2e1db;
+          background-image: -ms-linear-gradient(top, @first-color 0%, @second-color 100%);
+          background-image: -moz-linear-gradient(top, @first-color 0%, @second-color 100%);
+          background-image: -o-linear-gradient(top, @first-color 0%, @second-color 100%);
+          background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, @first-color), color-stop(100, @second-color));
+          background-image: -webkit-linear-gradient(top, @first-color 0%, @second-color 100%);
+          background-image: linear-gradient(to bottom, @first-color 0%, @second-color 100%);
+        }
       }
-      li{
-        font-weight: normal;
-        font-size: 1rem;
-        background:none;
-        border-top: 1px solid #DDC;
-        &first-child {
-          border: 0;
+      .item-title-container {
+        ul {
+          padding: 0;
+          margin: 0;
+        }
+        li  {
+            font-weight: normal;
+            font-size: 1rem;
+            padding: 8px 10px;
+            //box-shadow: 0px 0px 1px #A19989;
+            border-left: 1px solid #e0e0d0;
+            border-right: 1px solid #e0e0d0;
+            @first-color: #F6F6F0; //F6F6DD;//F1F1E5;//F6F6F0;//F1F1E5;//f4f4ec;//F1F1E5;
+            @second-color: #e0e0d0; //e2e2d9;//ecece1;
+            background-image: -ms-linear-gradient(top, @first-color 0%, @second-color 100%);
+            background-image: -moz-linear-gradient(top, @first-color 0%, @second-color 100%);
+            background-image: -o-linear-gradient(top, @first-color 0%, @second-color 100%);
+            background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, @first-color), color-stop(100, @second-color));
+            background-image: -webkit-linear-gradient(top, @first-color 0%, @second-color 100%);
+            background-image: linear-gradient(to bottom, @first-color 0%, @second-color 100%);
+            &first-child {
+              border: 0;
+            }
         }
       }
     }
@@ -94,7 +122,9 @@
   li {
     border-top: 1px solid #DDC;
     padding: 4px 0;
-    &:first-child {border-top: none;}
+    &:first-child {
+      border-top: none;
+    }
   }
   .title {
     background: url('../../css/img/grain_dark.gif');
@@ -103,7 +133,7 @@
     padding: 5px 8px;
   }
   .content {
-    padding: 10px;
+    padding: 10px 0;
   }
   .content_center {
     padding: 10px;
@@ -115,13 +145,13 @@
     line-height: 1.2rem;
     .alignCenter;
     a {
-      color:#C40;
+      color: #C40;
     }
   }
   .sort-wrapper {
     margin-bottom: 10px;
     select.sort {
-      width:100%;
+      width: 100%;
     }
   }
   .ord-wrapper {

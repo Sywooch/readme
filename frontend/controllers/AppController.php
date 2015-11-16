@@ -6,7 +6,7 @@ use yii\web\Controller;
 use Yii;
 use app\services\GenreServices;
 use common\models\LoginForm;
-use app\models\ContactFormModel;
+use frontend\models\ContactFormModel;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\SignupForm;
 use frontend\models\ResetPasswordForm;
@@ -57,18 +57,19 @@ class AppController extends Controller
 
     public function actionIndex()
     {
-        $genres = self::genreServices()->getFilterOptionsGenres();
-        return $this->render('index', ['genres' => $genres]);
+        $genreOptions = self::genreServices()->getFilterOptionsGenres();
+        return $this->render('index', ['genreOptions' => $genreOptions]);
     }
 
     public function actionAbout()
     {
-        $genres = self::genreServices()->getFilterOptionsGenres();
-        return $this->render('about', ['genres' => $genres]);
+        $genreOptions = self::genreServices()->getFilterOptionsGenres();
+        return $this->render('about', ['genreOptions' => $genreOptions]);
     }
 
     public function actionContact()
     {
+        $genreOptions = self::genreServices()->getFilterOptionsGenres();
         $model = new ContactFormModel();
         if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
             Yii::$app->session->setFlash('contactFormSubmitted');
@@ -77,14 +78,15 @@ class AppController extends Controller
         } else {
             return $this->render('contact', [
                 'model' => $model,
+                'genreOptions' => $genreOptions
             ]);
         }
     }
 
     public function actionPublishhouses()
     {
-        $genres = self::genreServices()->getFilterOptionsGenres();
-        return $this->render('publishhouses', ['genres' => $genres]);
+        $genreOptions = self::genreServices()->getFilterOptionsGenres();
+        return $this->render('publishhouses', ['genreOptions' => $genreOptions]);
     }
 
     public function actionGenres()
@@ -95,6 +97,7 @@ class AppController extends Controller
 
     public function actionLogin()
     {
+        $genreOptions = self::genreServices()->getFilterOptionsGenres();
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
@@ -105,6 +108,7 @@ class AppController extends Controller
         } else {
             return $this->render('login', [
                 'model' => $model,
+                'genreOptions' => $genreOptions
             ]);
         }
     }
@@ -117,6 +121,7 @@ class AppController extends Controller
 
     public function actionSignup()
     {
+        $genreOptions = self::genreServices()->getFilterOptionsGenres();
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
@@ -128,11 +133,13 @@ class AppController extends Controller
 
         return $this->render('signup', [
             'model' => $model,
+            'genreOptions' => $genreOptions
         ]);
     }
 
     public function actionRequestPasswordReset()
     {
+        $genreOptions = self::genreServices()->getFilterOptionsGenres();
         $model = new PasswordResetRequestForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) {
@@ -146,11 +153,13 @@ class AppController extends Controller
 
         return $this->render('requestPasswordResetToken', [
             'model' => $model,
+            'genreOptions' => $genreOptions
         ]);
     }
 
     public function actionResetPassword($token)
     {
+        $genreOptions = self::genreServices()->getFilterOptionsGenres();
         try {
             $model = new ResetPasswordForm($token);
         } catch (InvalidParamException $e) {
@@ -165,6 +174,7 @@ class AppController extends Controller
 
         return $this->render('resetPassword', [
             'model' => $model,
+            'genreOptions' => $genreOptions
         ]);
     }
 

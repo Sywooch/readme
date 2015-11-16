@@ -43,10 +43,11 @@ class AuthorsController extends Controller
         $usersChoiceBooks = self::bookServices()->getUsersChoiceBooksByAuthorID($id, 5);
         $pages = self::paginateComments($id);
         $comments = self::commentServices()->findCommentsForAuthor($pages, $id);
-        $genres = self::genreServices()->getFilterOptionsGenres();
-        return $this->render('single', ['id' => $id, 'author' => $authorModel, 'genres' => $genres,
-            'popularBooks' => $popularBooks, 'usersChoiceBooks' => $usersChoiceBooks,
-            'comments' => $comments, 'pages' => $pages]);
+        $genreOptions = self::genreServices()->getFilterOptionsGenres();
+        return $this->render('single', ['id' => $id, 'author' => $authorModel,
+            'genreOptions' => $genreOptions, 'popularBooks' => $popularBooks,
+            'usersChoiceBooks' => $usersChoiceBooks, 'comments' => $comments,
+            'pages' => $pages]);
     }
 
     protected function services()
